@@ -1,8 +1,8 @@
-FROM microsoft/aspnet:nightly
+FROM microsoft/aspnet
 
 COPY . /app
 WORKDIR /app
-RUN bash -c "source $DNX_USER_HOME/dnvm/dnvm.sh && dnu restore"
+RUN ["kpm", "restore"]
 
 EXPOSE 5004
-ENTRYPOINT ["dnx", "kestrel"]
+ENTRYPOINT ["k", "kestrel"]
