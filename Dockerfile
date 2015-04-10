@@ -2,7 +2,7 @@ FROM microsoft/aspnet:nightly
 
 COPY . /app
 WORKDIR /app
-RUN ["dnvm", "restore"]
+RUN bash -c "source $DNX_USER_HOME/dnvm/dnvm.sh && dnvm restore"
 
 EXPOSE 5004
 ENTRYPOINT ["k", "kestrel"]
