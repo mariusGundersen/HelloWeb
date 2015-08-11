@@ -2,7 +2,7 @@ FROM microsoft/aspnet
 
 COPY . /app
 WORKDIR /app
-RUN ["dnx", "restore"]
+RUN ["dnu", "restore"]
 
 EXPOSE 5004
-ENTRYPOINT ["dnx", "kestrel"]
+ENTRYPOINT ["dnx", ".", "kestrel"]
